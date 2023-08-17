@@ -12,22 +12,32 @@
 }
 
 :root {
-    --bg-color: #1f242d;
-    --second-bg-color: #323946;
-    --text-color: #fff;
-    --main-color: #0ef;
+    --bg-color: #1f1b1b;
+    --second-bg-color: #ac0a0a;
+    --text-color: #ac0a0a;
+    --main-color: #a52a2a;
+    --text-color-secondary: #fff;
+
+  --primary-color: #ac0a0a;
+  --secondary-color: #caf0f8;
+  --third-color: #1f1b1b;
+  --text-color-primary: #fff;
+  --text-color-secondary: #fff;
+  --text-font-family-primary: "Titillium Web", sans-serif;
+  --text-font-family-default: "Poppins", sans-serif;
+  --border: 2px solid var(--primary-color);
+  --border-radius: 10px;
+  --transition: all ease-in-out 0.3s;
 }
 
+.btn-1{
+    color: var(--text-color-primary);
+}
 html {
-    font-size: 62.5%;
+    font-size: 68.5%;
     overflow-x: hidden;
+    font-family: var(--text-font-family-default);
 }
-
-body {
-    background: var(--bg-color);
-    color: var(--text-color);
-}
-
 .header {
    position: fixed;
    top: 0;
@@ -40,17 +50,16 @@ body {
    align-items: center;
    z-index: 100; 
 }
-
 .header.sticky {
     border-bottom: .1rem solid rgba(0, 0, 0, .2);
 }
 .logo {
-   font-size: 2.5rem;
-   color: var(--text-color);
-   font-weight: 600;
-   cursor: default; 
-}
-
+    height: 100%;
+    width: 15%;
+  }
+  .logo img {
+    width: 30%;
+  }
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
@@ -60,19 +69,13 @@ body {
 
 .navbar a:hover,
 .navbar a.active {
-    color: var(--main-color);
+    color: var(--text-color-secondary);
 }
 
 #menu-icon {
     font-size: 3.6rem;
     color: var(--text-color);
     display: none;
-}
-.home-img img {
-    height: 80vh;
-    width: 35vw;
-    border-radius: 50%;
-    animation: floatImage 4s ease-in-out infinite;
 }
 @keyframes floatImage {
     0% {
@@ -87,77 +90,75 @@ body {
 }
 section {
     min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    padding: auto;
 }
 
 .home {
+    color: var(--text-color-secondary);
+    background-image: url("./images/9.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+span{
+    color: var(--second-bg-color);
+}
+
+.contents {
+  background-color: rgba(1, 1, 1, 0.6);
+  padding: 15% 3%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hero-section__title {
+    font-size: 7rem;
+}
+.hero-section span {
+    color: var(--primary-color);
+}
+.button-container {
+    margin-top: 5rem;
     display: flex;
+    gap: 5rem;
     justify-content: center;
-    align-items: center;
 }
-
-.home-content h3 {
-    font-size: 3.2rem;
-    font-weight: 700;
-}
-.home-content h1 {
-    font-size: 5.6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-.home-content h3:nth-of-type(2) {
-    margin-bottom: 2rem;
-}
-
-span {
-    color: var(--main-color);
-}
-
-.home-content p {
-    font-size: 1.6rem;
-    text-align: justify;
-}
-
-.social-media a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background: transparent;
-    border: .2rem solid var(--main-color);
-    border-radius: 50%;
-    font-size: 2rem;
-    color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
-    transition: .5s ease;
-}
-
-.social-media a:hover {
-    background: var(--main-color);
-    color: var(--second-bg-color);
-    box-shadow: 0 0 1rem var(--main-color);
-}
-.btn {
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background: var(--main-color);
-    border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--main-color);
-    font-size: 1.6rem;
-    color: var(--second-bg-color);
-    letter-spacing: .1rem;
+button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    cursor: pointer;
     font-weight: 600;
-    transition: .5s ease;
+    transition: var(--transition);
+}
+.primary-button,
+.secondary-button:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color-primary);
 }
 
+.secondary-button,
+.primary-button:hover {
+  background-color: transparent;
+  color: var(--text-color-secondary);
+}
+
+.hero-section__description {
+  font-size: 2rem;
+  width: 85%;
+  margin: 0 auto;
+}
 .about {
+    padding: 10rem 9% 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background: var(--second-bg-color);
+    background: var(--text-color-primary);
+    min-height: 100vh;
 }
 
 .btn:hover {
@@ -171,7 +172,7 @@ span {
 
 .heading {
     text-align: center;
-    font-size: 4.5rem;
+    font-size: 3.5rem;
 }
 
 .about-content h2 {
@@ -188,54 +189,70 @@ span {
     margin: 2rem 0 3rem;
     text-align: justify;
 }
-
-.services h2 {
-    margin-bottom: 5rem;
+.services {
+  text-align: center;
+  padding: 5rem 5% 2rem;
+  min-height: 100vh;
 }
 
-.services-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+.bx {
+    color: var(--primary-color);
+}
+.services-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+  gap: 10px;
+  transition: .5s ease;
 }
 
-.services-container .services-box {
-    flex: 1 1 30rem;
-    background: var(--second-bg-color);
-    padding: 3rem 2rem 4rem;
-    border-radius: 2rem;
-    text-align: center;
-    border: .2rem solid var(--bg-color);
-    transition: .5s ease;
+.services-boxs {
+  margin-top: 0.5rem;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  width: 25%;
+  height: 28rem;
+  padding-top: 1rem;
 }
-
-.services-container .services-box:hover {
-    border-color: var(--main-color);
+.service-paragraphe {
+    font-size: 3rem;
+    font-weight: 400;
+    text-decoration: overline;
+}
+p{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.services-boxs:hover {
+    background-color: var(--second-bg-color);
     transform: scale(1.02);
+    color: var(--text-color-primary);
 } 
 
-.services-box i {
+.services-boxs i {
     font-size: 7rem;
     color: var(--main-color);
 }
 
-.services-box p {
+.services-boxs p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
 }
 
-.services-box h3 {
-    font-size: 2.6rem;
+.services-boxs h3 {
+    font-size: 1.6rem;
 }
 
 .portfolio {
     background: var(--second-bg-color);
+    min-height: 100vh;
+    text-align: center;
+    padding: 5rem 5% 2rem;
 }
-
-.portfolio h2 {
-    margin-bottom: 4rem;
+.rea {
+    color: var(--text-color-primary);
+    padding-bottom: 2rem;
 }
 .portfolio-container {
     display: grid;
@@ -269,7 +286,7 @@ span {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 0 4rem;
+    padding: 0.9rem 4rem;
     transform: translateY(100%);
     transition: .5s ease;
 }
@@ -296,6 +313,12 @@ span {
 .portfolio-layer a i {
     font-size: 2rem;
     color: var(--second-bg-color);
+}
+.contact {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    text-align: center;
+    padding: 5rem 5% 2rem;
 }
 .contact h2 {
     margin-bottom: 3rem;
@@ -346,7 +369,7 @@ span {
     justify-content: center;
     align-items: center;
     padding: .8rem;
-    background: var(--main-color);
+    background: var(--text-color-secondary);
     border-radius: .8rem;
     transition: .5s ease;
 }
@@ -357,6 +380,22 @@ span {
     font-size: 2.4rem;
     color: var(--second-bg-color);
 }
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+    padding: 20px;
+  }
+  
+  .footer-container p {
+    text-align: justify;
+    color: #fff;
+  }
+  
+  .lina_text {
+    color: var(--bg-color);
+    font-size: 2rem;
+  }
 
 @media (max-width: 1200px) {
     html {
@@ -418,16 +457,13 @@ span {
    }
    .home {
     flex-direction: column;
+    padding: 0px;
    }
-   .home-content h3 {
-        font-size: 2.6rem;
+   .contents{
+    width: 100%;
    }
-   .home-content h1 {
-    font-size: 5rem;
-   }
-   .home-img img {
-    width: 70vw;
-    margin-top: 4rem;
+   .hero-section-overlay{
+    padding-top: 10rem;
    }
    .about {
         flex-direction: column-reverse;
@@ -439,8 +475,18 @@ span {
    .services h2 {
         margin-bottom: 3rem;
    }
+   .services-container{
+     flex-direction: column-reverse;
+   }
+   .services-boxs {
+    width: 100%;
+   }
    .portfolio h2 {
         grid-template-columns: repeat(2, 1fr);
+   }
+   .footer-container {
+    flex-direction: column-reverse;
+    padding: 0px;
    }
 }
 
@@ -469,6 +515,6 @@ span {
     }
     .footer p {
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 }
