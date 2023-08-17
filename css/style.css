@@ -106,6 +106,12 @@ span{
     color: var(--second-bg-color);
 }
 
+.text {
+    color: var(--text-color-primary);
+    font-size: 1.7rem;
+    font-weight: 200;
+}
+
 .contents {
   background-color: rgba(1, 1, 1, 0.6);
   padding: 15% 3%;
