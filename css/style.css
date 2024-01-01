@@ -100,6 +100,7 @@ html {
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
+    height: 91vh;
 }
 
 span{
@@ -113,10 +114,11 @@ span{
 }
 
 .contents {
-  background-color: rgba(1, 1, 1, 0.6);
+  background-color: rgba(1, 1, 1, 0.795);
   padding: 15% 3%;
   width: 100%;
-  min-height: 100vh;
+  height: 91vh;
+  z-index: 1;
 }
 
 .hero-section__title {
