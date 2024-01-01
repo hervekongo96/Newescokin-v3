@@ -88,10 +88,6 @@ html {
         transform: translateY(0);
     }
 }
-/* section {
-    min-height: 100vh;
-    padding: auto;
-} */
 
 .home {
     color: var(--text-color-secondary);
@@ -304,11 +300,7 @@ p{
 .portfolio-layer h4 {
     font-size: 3rem;
 }
-/*.portfolio-layer p {
-    font-size: 1.6rem;
-    margin: .2rem 0 1rem;
-}
-*/
+
 .portfolio-layer a {
     display: inline-flex;
     justify-content: center;
@@ -412,13 +404,7 @@ p{
 .foote-bottom p{
     color: var(--text-color-primary);
 }
-/* disigner{
-    opacity: 0.7;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    margin: 0px 5px;
-} */
+
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
